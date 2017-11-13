@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    var root = 'https://swapi.co/api/people/';
+    var root = 'https://swapi.co/api/species/';
 
     loadCharacters(root);
     
@@ -36,9 +36,13 @@ $(document).ready(function () {
                 console.log(data.results[i])
                 //Characters section
                 tarjeta += '<div class="col-lg-4 col-sm-6 text-center mb-4">';
-                tarjeta += '<img class="rounded-circle img-fluid d-block mx-auto" src="http://placehold.it/200x200" alt="">';
+                tarjeta += '<img class="rounded-circle img-fluid d-block mx-auto" src="img/C'+ data.results[i].name +'.jpg" alt="">';
                 tarjeta += '<br>';
                 tarjeta += '<h3>'+data.results[i].name+'</h3>';
+                tarjeta += '<p class="card-white"><b>Classification:</b> ' + data.results[i].classification + '</p>';
+                tarjeta += '<p class="card-white"><b>Planet:</b> ' + data.results[i].homeworld + '</p>';
+                tarjeta += '<p class="card-white"><b>Language:</b> ' + data.results[i].language + '</p>';
+                tarjeta += '<p class="card-white"><b>Films:</b> ' + data.results[i].films + '</p>';
                 tarjeta += '<a href="#" data-title="'+data.results[i].title+'" data-toggle="modal" data-target="#exampleModal">More details</a>';
                 tarjeta += '</div>';         
             }
@@ -63,4 +67,8 @@ $(document).ready(function () {
 
 
     }
+
+    $('#exampleModal').on('show.bs.modal', function (e) {
+        $(this).find('.modal-title').html($(e.relatedTarget).data('title'));
+    });
 });

@@ -55,7 +55,7 @@ $(document).ready(function () {
                     },
                     error: function(e){
                         console.log(e);
-                    }
+                    },
          
                 });
          
@@ -68,6 +68,7 @@ $(document).ready(function () {
 
     });
 
+});
 
 	$('#exampleModal0').on('show.bs.modal', function (e) {
         $(this).find('.modal-title').html($(e.relatedTarget).data('title'));
@@ -90,4 +91,4 @@ $(document).ready(function () {
     $('#exampleModal6').on('show.bs.modal', function (e) {
         $(this).find('.modal-title').html($(e.relatedTarget).data('title'));
     });
-});
+

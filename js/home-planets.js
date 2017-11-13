@@ -37,7 +37,7 @@ $(document).ready(function () {
                 console.log(data.results[i])
                 //Characters section
                 tarjeta += '<div class="col-lg-4 col-sm-6 text-center mb-4">';
-                tarjeta += '<img class="rounded-circle img-fluid d-block mx-auto" src="http://placehold.it/200x200" alt="">';
+                tarjeta += '<img class="rounded-circle img-fluid d-block mx-auto" src="img/P'+ data.results[i].name +'.jpg" alt="">';
                 tarjeta += '<br>';
                 tarjeta += '<h3 data-toggle="modal" data-target="#exampleModal">'+data.results[i].name+'</h3>';
                 tarjeta += '<p class="card-white"><b>Diameter:</b> ' + data.results[i].diameter + '</p>';
@@ -67,4 +67,9 @@ $(document).ready(function () {
     });
     
     }
+    
+    $('#exampleModal').on('show.bs.modal', function (e) {
+        $(this).find('.modal-title').html($(e.relatedTarget).data('title'));
+    });
+
 });

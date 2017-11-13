@@ -31,7 +31,7 @@ $(document).ready(function () {
             for (var i = 0; i < data.results.length; i++) {
                 console.log(data.results[i])
                 //Films section                             
-                tarjeta += '<h3><b>Characters<b/></h3>'
+                tarjeta += '<h3><b>Species<b/></h3>'
                 tarjeta += '<ul>';
                 for(j=0;j<data.results[0].characters.length;j++){
                     tarjeta +=  loadCharacterFilm(data.results[0].characters[j]);
